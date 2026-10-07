@@ -1,0 +1,208 @@
+:root {
+  /* Colors from style-guide.md */
+  --primary-violet: hsl(257, 40%, 49%);
+  --soft-magenta: hsl(300, 69%, 71%);
+  --white: #ffffff;
+
+  /* Fonts */
+  --font-headings: 'Poppins', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  background-color: var(--primary-violet);
+  background-image: url('./images/bg-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+  color: var(--white);
+  min-height: 100vh;
+}
+
+/* Main Container */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2.5rem 2rem 2rem;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  margin-bottom: 3.5rem;
+}
+
+.logo {
+  width: 125px;
+  height: auto;
+}
+
+/* Content Area */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+  flex: 1;
+}
+
+.illustration-wrapper {
+  width: 100%;
+  max-width: 700px;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.text-content {
+  text-align: center;
+  max-width: 520px;
+}
+
+.text-content h1 {
+  font-family: var(--font-headings);
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  margin-bottom: 1.2rem;
+}
+
+.text-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 1.75rem;
+}
+
+/* Register Button */
+.btn-register {
+  display: inline-block;
+  background-color: var(--white);
+  color: var(--primary-violet);
+  font-family: var(--font-headings);
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 0.75rem 4.5rem;
+  border-radius: 50px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+/* Button Hover State */
+.btn-register:hover,
+.btn-register:focus-visible {
+  background-color: var(--soft-magenta);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Footer / Social Icons */
+.footer {
+  margin-top: 3.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+}
+
+/* Social Hover States */
+.social-links a:hover,
+.social-links a:focus-visible {
+  color: var(--soft-magenta);
+  border-color: var(--soft-magenta);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   DESKTOP VIEW (Two-Column Layout)
+   ========================================= */
+@media (min-width: 900px) {
+  body {
+    background-image: url('./images/bg-desktop.svg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .page-container {
+    padding: 3.5rem 5rem 2.5rem;
+  }
+
+  .logo {
+    width: 200px;
+  }
+
+  .main-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+
+  .illustration-wrapper {
+    flex: 1.25;
+  }
+
+  .text-content {
+    flex: 1;
+    text-align: left;
+    max-width: 500px;
+  }
+
+  .text-content h1 {
+    font-size: 2.4rem;
+    line-height: 1.4;
+  }
+
+  .text-content p {
+    font-size: 1.1rem;
+    line-height: 1.65;
+  }
+
+  .btn-register {
+    font-size: 1rem;
+    padding: 0.9rem 4rem;
+  }
+
+  .footer {
+    justify-content: flex-end;
+    margin-top: 1rem;
+  }
+
+  .social-links a {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+}
